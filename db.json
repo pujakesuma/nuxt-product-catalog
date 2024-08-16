@@ -1,0 +1,89 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Nike Air Max 270",
+      "price": 150,
+      "image": "https://via.placeholder.com/300x300.png?text=Nike+Air+Max+270",
+      "description": "The Nike Air Max 270 features a large Air unit in the heel and a soft foam midsole, delivering plush cushioning with every step.",
+      "variants": [
+        { "size": "8", "color": "Black" },
+        { "size": "9", "color": "White" },
+        { "size": "10", "color": "Blue" }
+      ],
+      "gallery": [
+        "https://via.placeholder.com/600x400.png?text=Nike+Air+Max+270+Side",
+        "https://via.placeholder.com/600x400.png?text=Nike+Air+Max+270+Top",
+        "https://via.placeholder.com/600x400.png?text=Nike+Air+Max+270+Back"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Adidas Ultraboost 22",
+      "price": 180,
+      "image": "https://via.placeholder.com/300x300.png?text=Adidas+Ultraboost+22",
+      "description": "Experience endless energy in the Adidas Ultraboost 22, designed for optimal comfort and performance during long runs.",
+      "variants": [
+        { "size": "8", "color": "Grey" },
+        { "size": "9", "color": "Black" },
+        { "size": "10", "color": "White" }
+      ],
+      "gallery": [
+        "https://via.placeholder.com/600x400.png?text=Adidas+Ultraboost+22+Side",
+        "https://via.placeholder.com/600x400.png?text=Adidas+Ultraboost+22+Top",
+        "https://via.placeholder.com/600x400.png?text=Adidas+Ultraboost+22+Back"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Puma RS-X3",
+      "price": 110,
+      "image": "https://via.placeholder.com/300x300.png?text=Puma+RS-X3",
+      "description": "The Puma RS-X3 reinvents street style with a bold design and superior cushioning, perfect for everyday wear.",
+      "variants": [
+        { "size": "7", "color": "Red" },
+        { "size": "8", "color": "Blue" },
+        { "size": "9", "color": "Yellow" }
+      ],
+      "gallery": [
+        "https://via.placeholder.com/600x400.png?text=Puma+RS-X3+Side",
+        "https://via.placeholder.com/600x400.png?text=Puma+RS-X3+Top",
+        "https://via.placeholder.com/600x400.png?text=Puma+RS-X3+Back"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "New Balance 990v5",
+      "price": 175,
+      "image": "https://via.placeholder.com/300x300.png?text=New+Balance+990v5",
+      "description": "The New Balance 990v5 blends cushioning and stability for the perfect balance of comfort and style.",
+      "variants": [
+        { "size": "9", "color": "Grey" },
+        { "size": "10", "color": "Navy" },
+        { "size": "11", "color": "Black" }
+      ],
+      "gallery": [
+        "https://via.placeholder.com/600x400.png?text=New+Balance+990v5+Side",
+        "https://via.placeholder.com/600x400.png?text=New+Balance+990v5+Top",
+        "https://via.placeholder.com/600x400.png?text=New+Balance+990v5+Back"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Reebok Classic Leather",
+      "price": 90,
+      "image": "https://via.placeholder.com/300x300.png?text=Reebok+Classic+Leather",
+      "description": "Timeless design meets modern comfort in the Reebok Classic Leather, an essential for any sneaker collection.",
+      "variants": [
+        { "size": "8", "color": "White" },
+        { "size": "9", "color": "Black" },
+        { "size": "10", "color": "Brown" }
+      ],
+      "gallery": [
+        "https://via.placeholder.com/600x400.png?text=Reebok+Classic+Leather+Side",
+        "https://via.placeholder.com/600x400.png?text=Reebok+Classic+Leather+Top",
+        "https://via.placeholder.com/600x400.png?text=Reebok+Classic+Leather+Back"
+      ]
+    }
+  ]
+}
