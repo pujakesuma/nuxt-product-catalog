@@ -14,4 +14,8 @@ export default defineNuxtConfig({
       apiBase: process.env.NUXT_PUBLIC_API_BASE, // can be overridden by NUXT_PUBLIC_API_BASE environment variable
     },
   },
+  image: {
+    provider: "netlify",
+    domains: ["via.placeholder.com"],
+  },
 });
