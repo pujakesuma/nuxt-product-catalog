@@ -77,10 +77,34 @@ const productStore = useProductStore();
 const products = productStore.products;
 
 const currentIndex = ref(0);
-const visibleItems = 3;
+const visibleItems = ref(3); // Default number of visible items
+
+// Update visibleItems based on screen width
+onMounted(() => {
+  updateVisibleItems();
+  window.addEventListener("resize", updateVisibleItems);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", updateVisibleItems);
+});
+
+const updateVisibleItems = () => {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 768) {
+    visibleItems.value = 1;
+  } else if (screenWidth < 1024) {
+    visibleItems.value = 2;
+  } else {
+    visibleItems.value = 3;
+  }
+  updateScrollPosition(); // Update position after changing visibleItems
+};
 
 // Calculate the maximum index based on visible items and total products
-const maxIndex = computed(() => Math.ceil(products.length / visibleItems) - 1);
+const maxIndex = computed(
+  () => Math.ceil(products.length / visibleItems.value) - 1
+);
 
 const updateScrollPosition = () => {
   if (scrollContainer.value) {
@@ -153,7 +177,7 @@ const scrollRight = () => {
     transition: transform 0.5s ease-in-out;
 
     .product-card {
-      min-width: calc(100% / 3);
+      min-width: calc(100% / v-bind(visibleItems));
       box-sizing: border-box;
       cursor: pointer;
       padding: 10px;
