@@ -9,7 +9,7 @@
     </div>
     <div class="carousel-section">
       <h1>STEP INTO IT.</h1>
-      <ProductCarousel :products="productStore.products" />
+      <ProductCarousel />
     </div>
     <div class="slider-section">
       <h2>Where Style Meets Support.</h2>
