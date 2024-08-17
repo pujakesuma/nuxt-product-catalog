@@ -1,75 +1,64 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 Shoe Product Catalog 
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This project is a responsive shoe product catalog built with Nuxt 3, showcasing a modern and user-friendly interface. It features a dynamic homepage with a hero section, carousel, and product slider, along with a detailed product page for individual items.
 
-## Setup
+## Features
 
-Make sure to install the dependencies:
+* **Nuxt 3 Framework:** Utilizes the latest Nuxt 3 framework for efficient and performant development.
+* **TypeScript:** Employs TypeScript for enhanced type safety and code maintainability.
+* **Pinia:** Manages application state efficiently with the Pinia state management library.
+* **SCSS:** Styles the application using pure CSS preprocessor (SCSS) for flexibility and maintainability.
+* **Composition API:** Leverages the Composition API for cleaner and more organized component logic.
+* **Mockup API:** Fetches product data from a mockup API hosted on `https://my-json-server.typicode.com/`.
+* **Placeholder Images:** Utilizes placeholder images from `via.placeholder.com` for visual representation.
+* **Netlify Deployment:** Deployed on Netlify for easy access and seamless updates.
+* **Product Catalog Page:** 
+    * **Hero Section:** Captures attention with a visually appealing hero image and tagline.
+    * **Carousel:** Showcases featured products in an interactive carousel.
+    * **Slider:** Displays additional products in a horizontal slider.
+* **Product Detail Page:**
+    * **Product Information:** Presents product details, including name, price, description, and variants.
+    * **Image Gallery:** Features a main image and thumbnail navigation for multiple product views.
 
-```bash
-# npm
-npm install
+## Getting Started
 
-# pnpm
-pnpm install
+1. **Clone the repository:**
 
-# yarn
-yarn install
+   ```bash
+   git clone git@github.com:pujakesuma/nuxt-product-catalog.git
+   ```
 
-# bun
-bun install
-```
+2. **Install dependencies:**
 
-## Development Server
+   ```bash
+   cd nuxt-product-catalog 
+   npm install 
+   ```
 
-Start the development server on `http://localhost:3000`:
+3. **Run the development server:**
 
-```bash
-# npm
-npm run dev
+   ```bash
+   npm run dev 
+   ```
 
-# pnpm
-pnpm run dev
+4. **Open your browser and visit `http://localhost:3000`**
 
-# yarn
-yarn dev
+## Deployment
 
-# bun
-bun run dev
-```
+This project is deployed on Netlify. You can access the live site at [https://shoe-wan.netlify.app/](https://shoe-wan.netlify.app/).
 
-## Production
+## Future Enhancements
 
-Build the application for production:
+* **Implement actual product data fetching from a real API.**
+* **Add cart functionality and checkout process.**
+* **Incorporate user authentication and reviews.**
+* **Enhance the UI with animations and transitions.**
+* **Optimize for performance and accessibility.**
 
-```bash
-# npm
-npm run build
+## Contributing
 
-# pnpm
-pnpm run build
+Contributions are welcome! Please feel free to submit pull requests or open issues.
 
-# yarn
-yarn build
+## License
 
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+This project is licensed under the [MIT License](LICENSE).
