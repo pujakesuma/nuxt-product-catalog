@@ -2,7 +2,7 @@
   <div class="catalog">
     <div class="carousel-section">
       <h1>STEP INTO IT.</h1>
-      <ProductCarousel />
+      <ProductCarousel :products="productStore.products" />
     </div>
     <div class="slider-section">
       <h2>Where Style Meets Support.</h2>
@@ -12,16 +12,13 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
 import { useProductStore } from "~/stores/productStore";
 import ProductCarousel from "~/components/Carousel.vue";
 import ProductSlider from "~/components/Slider.vue";
 
 const productStore = useProductStore();
 
-onMounted(() => {
-  productStore.fetchProducts();
-});
+productStore.fetchProducts();
 </script>
 
 <style lang="scss" scoped>
@@ -32,6 +29,7 @@ onMounted(() => {
 
   h1 {
     font-size: 4rem;
+    margin-bottom: 4rem;
   }
 
   h2 {

@@ -8,7 +8,11 @@
           :key="index"
         >
           <nuxt-link :to="`/product/${product.id}`">
-            <img :src="product.image" :alt="product.name" />
+            <NuxtImg
+              :src="product.image"
+              :alt="product.name"
+              placeholder="images/placeholder.png"
+            />
             <div class="product-name">{{ product.name }}</div>
           </nuxt-link>
         </div>
@@ -53,12 +57,14 @@
 import { ref, onMounted, computed } from "vue";
 import { useProductStore } from "~/stores/productStore";
 
-const carousel = ref<HTMLDivElement | null>(null);
 const productStore = useProductStore();
+const products = productStore.products;
+
+const carousel = ref<HTMLDivElement | null>(null);
 
 const duplicatedProducts = computed(() => {
-  if (productStore.products.length > 0) {
-    return [...productStore.products, ...productStore.products];
+  if (products.length > 0) {
+    return [...products, ...products];
   }
   return [];
 });
@@ -77,7 +83,7 @@ const updateCarouselPosition = () => {
 
 const prevSlide = () => {
   if (currentIndex === 0) {
-    currentIndex = productStore.products.length;
+    currentIndex = products.length;
     updateCarouselPositionWithoutAnimation();
     setTimeout(() => {
       currentIndex -= visibleItems;
@@ -93,7 +99,7 @@ const prevSlide = () => {
 };
 
 const nextSlide = () => {
-  if (currentIndex === productStore.products.length) {
+  if (currentIndex === products.length) {
     currentIndex = 0;
     updateCarouselPositionWithoutAnimation();
     setTimeout(() => {
@@ -102,8 +108,8 @@ const nextSlide = () => {
     }, 0);
   } else {
     currentIndex += visibleItems;
-    if (currentIndex > productStore.products.length) {
-      currentIndex = productStore.products.length;
+    if (currentIndex > products.length) {
+      currentIndex = products.length;
     }
     updateCarouselPosition();
   }
@@ -119,10 +125,8 @@ const updateCarouselPositionWithoutAnimation = () => {
 };
 
 onMounted(() => {
-  productStore.fetchProducts().then(() => {
-    currentIndex = 0;
-    updateCarouselPositionWithoutAnimation();
-  });
+  currentIndex = 0;
+  updateCarouselPositionWithoutAnimation();
 });
 </script>
 
@@ -143,17 +147,17 @@ onMounted(() => {
 
   .carousel {
     display: flex;
-    gap: 10px;
     transition: transform 0.5s ease-in-out;
 
     .carousel-item {
-      min-width: calc(100% / 4); /* Four items per view */
+      min-width: calc(100% / 7); /* Four items per view */
       box-sizing: border-box;
       text-align: center;
       cursor: pointer;
+      padding: 10px;
 
       img {
-        max-width: 100%;
+        width: 100%;
         height: auto;
         display: block;
         margin: 0 auto;
@@ -169,7 +173,7 @@ onMounted(() => {
 
   .carousel-control {
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     background-color: #fff;
     border: none;
