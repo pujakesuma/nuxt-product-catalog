@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'New Amsterdam';
+  src: url('/fonts/FarAwayGaNewAmsterdamaxy.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+a {
+  text-decoration: none !important;
+  color: #000;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "New Amsterdam", sans-serif;
+}
