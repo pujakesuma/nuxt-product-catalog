@@ -42,7 +42,7 @@
 
     <div class="product-info">
       <h1>{{ product?.name }}</h1>
-      <p class="price">Rp {{ product?.price.toLocaleString() }}</p>
+      <p class="price">{{ formatCurrency(product?.price || 0) }}</p>
       <div class="size-options">
         <h3>Select Size</h3>
         <div class="size-list">
