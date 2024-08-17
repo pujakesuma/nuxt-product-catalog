@@ -92,21 +92,35 @@ const product = computed(() => productStore.product);
 const selectSize = (size: string) => {
   selectedSize.value = size;
 };
+
+useHead({
+  title: product.value?.name,
+  meta: [{ name: "description", content: product.value?.name }],
+});
 </script>
 
 <style lang="scss" scoped>
 .product-detail {
+  overflow: hidden;
   display: flex;
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 5rem;
-  width: 100%;
+  padding: 5rem 1.25rem;
+
+  // Media query for smaller screens (adjust breakpoint as needed)
+  @media (max-width: 768px) {
+    flex-direction: column; // Stack elements vertically
+    gap: 20px;
+  }
 
   .product-gallery {
     display: flex;
     gap: 10px;
     width: 60%;
+    @media (max-width: 768px) {
+      width: 100%; // Gallery takes full width
+    }
 
     .thumbnails {
       display: flex;
@@ -130,6 +144,10 @@ const selectSize = (size: string) => {
       img {
         width: 100%;
         height: auto;
+
+        @media (max-width: 768px) {
+          object-fit: cover; // Maintain aspect ratio and cover the container
+        }
       }
     }
   }
@@ -141,13 +159,21 @@ const selectSize = (size: string) => {
 
     h1 {
       font-size: 28px;
-      margin-bottom: 10px;
+
+      @media (max-width: 768px) {
+        font-size: 24px;
+        margin-bottom: 0;
+      }
     }
 
     .price {
       font-size: 24px;
       margin-bottom: 20px;
       color: #333;
+
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
     }
 
     .size-options {
@@ -155,6 +181,9 @@ const selectSize = (size: string) => {
 
       h3 {
         margin-bottom: 10px;
+        @media (max-width: 768px) {
+          font-size: 1rem;
+        }
       }
 
       .size-list {
@@ -195,6 +224,12 @@ const selectSize = (size: string) => {
 
         li {
           margin-bottom: 10px;
+        }
+      }
+
+      h3 {
+        @media (max-width: 768px) {
+          font-size: 1rem;
         }
       }
     }

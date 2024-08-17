@@ -69,14 +69,37 @@ const duplicatedProducts = computed(() => {
   return [];
 });
 
-let currentIndex = 0;
-const visibleItems = 4; // Number of items visible at a time
+const totalDuplicatedProducts = duplicatedProducts.value.length;
 
+let currentIndex = 0;
+const visibleItems = ref<number>(4); // Default number of visible items
+
+// Update visibleItems based on screen width
+onMounted(() => {
+  updateVisibleItems();
+  window.addEventListener("resize", updateVisibleItems);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", updateVisibleItems);
+});
+
+const updateVisibleItems = () => {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 768) {
+    visibleItems.value = 1;
+  } else if (screenWidth < 1024) {
+    visibleItems.value = 3;
+  } else {
+    visibleItems.value = 4;
+  }
+  updateCarouselPosition(); // Update position after changing visibleItems
+};
 const updateCarouselPosition = () => {
   if (carousel.value) {
     carousel.value.style.transition = "transform 0.5s ease-in-out";
     carousel.value.style.transform = `translateX(-${
-      currentIndex * (100 / visibleItems)
+      currentIndex * (100 / visibleItems.value)
     }%)`;
   }
 };
@@ -86,11 +109,11 @@ const prevSlide = () => {
     currentIndex = products.length;
     updateCarouselPositionWithoutAnimation();
     setTimeout(() => {
-      currentIndex -= visibleItems;
+      currentIndex -= visibleItems.value;
       updateCarouselPosition();
     }, 0);
   } else {
-    currentIndex -= visibleItems;
+    currentIndex -= visibleItems.value;
     if (currentIndex < 0) {
       currentIndex = 0;
     }
@@ -103,11 +126,11 @@ const nextSlide = () => {
     currentIndex = 0;
     updateCarouselPositionWithoutAnimation();
     setTimeout(() => {
-      currentIndex += visibleItems;
+      currentIndex += visibleItems.value;
       updateCarouselPosition();
     }, 0);
   } else {
-    currentIndex += visibleItems;
+    currentIndex += visibleItems.value;
     if (currentIndex > products.length) {
       currentIndex = products.length;
     }
@@ -119,38 +142,31 @@ const updateCarouselPositionWithoutAnimation = () => {
   if (carousel.value) {
     carousel.value.style.transition = "none";
     carousel.value.style.transform = `translateX(-${
-      currentIndex * (100 / visibleItems)
+      currentIndex * (100 / visibleItems.value)
     }%)`;
   }
 };
-
-onMounted(() => {
-  currentIndex = 0;
-  updateCarouselPositionWithoutAnimation();
-});
 </script>
 
 <style scoped lang="scss">
 .carousel-container {
   position: relative;
   width: 100%;
-  overflow: hidden;
   scroll-behavior: smooth;
 
   .carousel-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    overflow: hidden;
     width: 100%;
   }
 
   .carousel {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    width: calc(100% * v-bind(totalDuplicatedProducts / visibleItems));
 
     .carousel-item {
-      min-width: calc(100% / 7); /* Four items per view */
+      min-width: calc(100% / v-bind(visibleItems));
       box-sizing: border-box;
       text-align: center;
       cursor: pointer;
@@ -160,20 +176,27 @@ onMounted(() => {
         width: 100%;
         height: auto;
         display: block;
-        margin: 0 auto;
       }
 
       .product-name {
         font-weight: bold;
         margin-top: 10px;
         font-size: 1.5rem;
+
+        @media (max-width: 768px) {
+          font-size: 1.25rem;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 1rem;
+        }
       }
     }
   }
 
   .carousel-control {
     position: absolute;
-    top: 40%;
+    top: 50%;
     transform: translateY(-50%);
     background-color: #fff;
     border: none;
