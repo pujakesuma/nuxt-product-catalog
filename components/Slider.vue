@@ -48,11 +48,15 @@
       <div class="horizontal-scroll" ref="scrollContainer">
         <div
           class="product-card"
-          v-for="(product, index) in productStore.products"
+          v-for="(product, index) in products"
           :key="index"
         >
           <nuxt-link :to="`/product/${product.id}`">
-            <img :src="product.image" :alt="product.name" />
+            <NuxtImg
+              :src="product.image"
+              :alt="product.name"
+              placeholder="images/placeholder.png"
+            />
             <div class="product-info">
               <p class="product-name">{{ product.name }}</p>
               <p class="product-price">{{ formatCurrency(product.price) }}</p>
@@ -70,14 +74,13 @@ import { useProductStore } from "~/stores/productStore";
 
 const scrollContainer = ref<HTMLDivElement | null>(null);
 const productStore = useProductStore();
+const products = productStore.products;
 
 const currentIndex = ref(0);
 const visibleItems = 3;
 
 // Calculate the maximum index based on visible items and total products
-const maxIndex = computed(
-  () => Math.ceil(productStore.products.length / visibleItems) - 1
-);
+const maxIndex = computed(() => Math.ceil(products.length / visibleItems) - 1);
 
 const updateScrollPosition = () => {
   if (scrollContainer.value) {
@@ -100,12 +103,6 @@ const scrollRight = () => {
     updateScrollPosition();
   }
 };
-
-onMounted(() => {
-  productStore.fetchProducts().then(() => {
-    updateScrollPosition();
-  });
-});
 </script>
 
 <style scoped lang="scss">
@@ -153,13 +150,13 @@ onMounted(() => {
 
   .horizontal-scroll {
     display: flex;
-    gap: 10px;
     transition: transform 0.5s ease-in-out;
 
     .product-card {
       min-width: calc(100% / 3);
       box-sizing: border-box;
       cursor: pointer;
+      padding: 10px;
 
       img {
         width: 100%;
