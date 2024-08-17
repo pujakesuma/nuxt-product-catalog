@@ -84,6 +84,125 @@
         "https://via.placeholder.com/600x400.png?text=Reebok+Classic+Leather+Top",
         "https://via.placeholder.com/600x400.png?text=Reebok+Classic+Leather+Back"
       ]
+    },
+    {
+      "id": 6,
+      "name": "Asics Gel-Kayano 27",
+      "price": 160,
+      "image": "https://via.placeholder.com/300x300.png?text=Asics+Gel-Kayano+27",
+      "description": "The Asics Gel-Kayano 27 offers premium stability and cushioning, making it the ideal shoe for long-distance running.",
+      "variants": [
+        { "size": "8", "color": "Blue" },
+        { "size": "9", "color": "Green" },
+        { "size": "10", "color": "Grey" }
+      ],
+      "gallery": [
+        "https://via.placeholder.com/600x400.png?text=Asics+Gel-Kayano+27+Side",
+        "https://via.placeholder.com/600x400.png?text=Asics+Gel-Kayano+27+Top",
+        "https://via.placeholder.com/600x400.png?text=Asics+Gel-Kayano+27+Back"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Nike Air Force 1",
+      "price": 120,
+      "image": "https://via.placeholder.com/300x300.png?text=Nike+Air+Force+1",
+      "description": "The Nike Air Force 1 is a classic sneaker that has stood the test of time with its clean lines and timeless design.",
+      "variants": [
+        { "size": "7", "color": "White" },
+        { "size": "8", "color": "Black" },
+        { "size": "9", "color": "Red" }
+      ],
+      "gallery": [
+        "https://via.placeholder.com/600x400.png?text=Nike+Air+Force+1+Side",
+        "https://via.placeholder.com/600x400.png?text=Nike+Air+Force+1+Top",
+        "https://via.placeholder.com/600x400.png?text=Nike+Air+Force+1+Back"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Adidas Yeezy Boost 350",
+      "price": 220,
+      "image": "https://via.placeholder.com/300x300.png?text=Adidas+Yeezy+Boost+350",
+      "description": "The Adidas Yeezy Boost 350 combines fashion-forward design with a comfortable fit and responsive cushioning.",
+      "variants": [
+        { "size": "8", "color": "Tan" },
+        { "size": "9", "color": "Black" },
+        { "size": "10", "color": "White" }
+      ],
+      "gallery": [
+        "https://via.placeholder.com/600x400.png?text=Adidas+Yeezy+Boost+350+Side",
+        "https://via.placeholder.com/600x400.png?text=Adidas+Yeezy+Boost+350+Top",
+        "https://via.placeholder.com/600x400.png?text=Adidas+Yeezy+Boost+350+Back"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Vans Old Skool",
+      "price": 60,
+      "image": "https://via.placeholder.com/300x300.png?text=Vans+Old+Skool",
+      "description": "The Vans Old Skool brings classic skate style with its durable canvas upper and signature rubber waffle outsole.",
+      "variants": [
+        { "size": "7", "color": "Black" },
+        { "size": "8", "color": "White" },
+        { "size": "9", "color": "Blue" }
+      ],
+      "gallery": [
+        "https://via.placeholder.com/600x400.png?text=Vans+Old+Skool+Side",
+        "https://via.placeholder.com/600x400.png?text=Vans+Old+Skool+Top",
+        "https://via.placeholder.com/600x400.png?text=Vans+Old+Skool+Back"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Converse Chuck Taylor All Star",
+      "price": 55,
+      "image": "https://via.placeholder.com/300x300.png?text=Converse+Chuck+Taylor+All+Star",
+      "description": "The Converse Chuck Taylor All Star is a timeless sneaker that pairs effortlessly with any outfit.",
+      "variants": [
+        { "size": "6", "color": "Black" },
+        { "size": "7", "color": "White" },
+        { "size": "8", "color": "Red" }
+      ],
+      "gallery": [
+        "https://via.placeholder.com/600x400.png?text=Converse+Chuck+Taylor+All+Star+Side",
+        "https://via.placeholder.com/600x400.png?text=Converse+Chuck+Taylor+All+Star+Top",
+        "https://via.placeholder.com/600x400.png?text=Converse+Chuck+Taylor+All+Star+Back"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Under Armour HOVR Phantom",
+      "price": 140,
+      "image": "https://via.placeholder.com/300x300.png?text=Under+Armour+HOVR+Phantom",
+      "description": "The Under Armour HOVR Phantom delivers a responsive ride with its HOVR cushioning technology, ideal for runners.",
+      "variants": [
+        { "size": "8", "color": "Black" },
+        { "size": "9", "color": "Red" },
+        { "size": "10", "color": "Grey" }
+      ],
+      "gallery": [
+        "https://via.placeholder.com/600x400.png?text=Under+Armour+HOVR+Phantom+Side",
+        "https://via.placeholder.com/600x400.png?text=Under+Armour+HOVR+Phantom+Top",
+        "https://via.placeholder.com/600x400.png?text=Under+Armour+HOVR+Phantom+Back"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Saucony Jazz Original",
+      "price": 85,
+      "image": "https://via.placeholder.com/300x300.png?text=Saucony+Jazz+Original",
+      "description": "The Saucony Jazz Original is a retro sneaker that offers classic style with modern comfort.",
+      "variants": [
+        { "size": "7", "color": "Navy" },
+        { "size": "8", "color": "Grey" },
+        { "size": "9", "color": "Red" }
+      ],
+      "gallery": [
+        "https://via.placeholder.com/600x400.png?text=Saucony+Jazz+Original+Side",
+        "https://via.placeholder.com/600x400.png?text=Saucony+Jazz+Original+Top",
+        "https://via.placeholder.com/600x400.png?text=Saucony+Jazz+Original+Back"
+      ]
     }
   ]
 }
